@@ -1,0 +1,95 @@
+:root{ --dark:#14213d; --accent:#ffc300; --accent-d:#e0ac00; --bg:#f4f5f7; --card:#fff; --line:#e6e8ec; --muted:#6b7280; --ok:#137333; --warn:#b7791f; --err:#c5221f; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:#111827;-webkit-tap-highlight-color:transparent}
+.hidden{display:none!important}
+.muted{color:var(--muted);font-size:13px}
+
+/* Header + navigasi */
+.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;background:var(--dark);color:#fff;padding:14px 16px}
+.brand{font-weight:700;display:flex;align-items:center;gap:8px;font-size:16px}
+.dot{width:12px;height:12px;border-radius:3px;background:var(--accent)}
+.subnav{position:sticky;top:50px;z-index:9;display:flex;gap:4px;background:#1d2b4d;padding:0 8px;overflow-x:auto}
+.subnav a{color:#c9d2e3;text-decoration:none;font-weight:600;font-size:14px;padding:12px;white-space:nowrap;border-bottom:3px solid transparent}
+.subnav a.active{color:#fff;border-bottom-color:var(--accent)}
+.nbadge{background:var(--err);color:#fff;font-size:11px;font-weight:700;padding:1px 7px;border-radius:20px;margin-left:2px}
+
+/* Layout */
+.container{max-width:860px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05);margin-bottom:14px}
+
+/* Form */
+label{display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:14px}
+input,select{width:100%;margin-top:6px;padding:13px 12px;font-size:16px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#111827}
+input:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,195,0,.25)}
+.hint{display:block;margin-top:6px;font-size:12px;font-weight:500;color:var(--muted)}
+.hint.ok{color:var(--ok)} .hint.warn{color:var(--warn)}
+
+/* Tombol */
+.btn-primary{padding:13px 15px;background:var(--accent);color:#111;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;width:100%}
+.btn-primary:active{background:var(--accent-d)}
+.btn-small{padding:8px 12px;background:var(--dark);color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;font-size:13px}
+.btn-small:disabled{opacity:.4}
+.btn-ghost{padding:11px 14px;background:#eef0f3;color:#374151;border:none;border-radius:10px;font-weight:600;cursor:pointer}
+.btn-danger{padding:11px 14px;background:var(--err);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer}
+.btn-icon{background:none;border:none;font-size:18px;cursor:pointer;padding:4px 6px;border-radius:8px}
+.btn-icon:active{background:#eef0f3}
+.btn-icon.danger:active{background:#fde8e8}
+
+/* Progress bar sinkron master */
+.syncbar{display:flex;flex-direction:column;gap:6px;background:#fff8e1;border:1px solid #ffe082;border-radius:12px;padding:12px 14px;margin-bottom:14px}
+.syncbar-track{height:8px;background:#ffe9a8;border-radius:20px;overflow:hidden}
+.syncbar-fill{height:100%;width:0;background:var(--accent);border-radius:20px;transition:width .25s ease}
+
+/* Filter & status (packing) */
+.filterbar .filter-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.filter-row label{flex:1;min-width:130px;margin-bottom:0}
+.filter-row input{margin-top:0}
+.status-line{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px;font-size:13px;font-weight:600;color:#374151}
+.updated{color:var(--muted);font-weight:500;font-size:12px}
+.toolbar{margin-bottom:12px}
+
+/* Grup tujuan (packing) */
+.group{padding:0;overflow:hidden}
+.group-head{display:flex;justify-content:space-between;align-items:center;background:var(--dark);color:#fff;padding:12px 16px}
+.group-head h2{font-size:15px}
+.badge{background:var(--accent);color:#111;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:#f9fafb;font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:#6b7280}
+td.num,th.num{text-align:right}
+.empty{padding:26px;text-align:center;color:var(--muted)}
+
+/* Tabs (master) */
+.tabs{display:flex;gap:6px;margin-bottom:14px}
+.tab{flex:1;padding:12px;background:#fff;border:1px solid var(--line);border-radius:10px;font-weight:700;color:#374151;cursor:pointer}
+.tab.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+
+/* List master + monitor */
+.mlist{margin-top:12px}
+.mrow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line)}
+.mrow:last-child{border-bottom:none}
+.mval{font-size:15px;line-height:1.4}
+.mact{display:flex;gap:4px;flex-shrink:0}
+.pager{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px}
+.obx-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.badge-status{font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px}
+.badge-status.pending{background:#e5e7eb;color:#374151}
+.badge-status.sending{background:#fef3c7;color:var(--warn)}
+.badge-status.failed{background:#fde8e8;color:var(--err)}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(120%);background:#111827;color:#fff;padding:13px 18px;border-radius:10px;font-size:14px;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.25);opacity:0;transition:.3s;z-index:100;max-width:90%;text-align:center}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast.success{background:var(--ok)} .toast.error{background:var(--err)}
+
+/* Modal (konfirmasi cantik + prompt) */
+.modal-overlay{position:fixed;inset:0;background:rgba(17,24,39,.55);display:flex;align-items:center;justify-content:center;padding:20px;z-index:200;opacity:0;transition:opacity .2s}
+.modal-overlay.show{opacity:1}
+.modal{background:#fff;border-radius:16px;padding:22px;width:100%;max-width:380px;transform:translateY(12px) scale(.98);transition:transform .2s;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.modal-overlay.show .modal{transform:translateY(0) scale(1)}
+.modal h3{font-size:17px;margin-bottom:10px;color:var(--dark)}
+.modal p{font-size:14px;color:#374151;line-height:1.5;margin-bottom:18px}
+.mlabel{display:block;font-size:13px;font-weight:600;margin-bottom:14px}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+.modal-actions button{width:auto;min-width:88px}

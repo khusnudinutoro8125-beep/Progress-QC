@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master — Progress QC</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="dot"></span> Master</div></header>
+<nav class="subnav">
+  <a href="index.html">Input</a>
+  <a href="packing.html">Packing</a>
+  <a href="master.html" class="active">Master</a>
+  <a href="monitor.html">Monitor</a>
+</nav>
+<main class="container">
+  <div class="tabs">
+    <button class="tab active" data-tab="tujuan">Tujuan</button>
+    <button class="tab" data-tab="posisi">Posisi</button>
+    <button class="tab" data-tab="part">Part</button>
+  </div>
+
+  <section class="panel card" data-panel="tujuan">
+    <button class="btn-primary" data-add="tujuan">+ Tambah Tujuan</button>
+    <div id="tujuanList" class="mlist"></div>
+  </section>
+
+  <section class="panel card hidden" data-panel="posisi">
+    <button class="btn-primary" data-add="posisi">+ Tambah Posisi</button>
+    <div id="posisiList" class="mlist"></div>
+  </section>
+
+  <section class="panel card hidden" data-panel="part">
+    <div class="filter-row">
+      <input type="text" id="partSearch" placeholder="Cari part number / nama…">
+      <button class="btn-primary" data-add="part">+ Tambah Part</button>
+    </div>
+    <div id="partList" class="mlist"></div>
+    <div id="partPager" class="pager"></div>
+  </section>
+</main>
+<div id="toast" class="toast"></div>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script src="db.js"></script>
+<script src="master.js"></script>
+</body>
+</html>

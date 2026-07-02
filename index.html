@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Input QC — Sparepart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="dot"></span> QC Sparepart</div></header>
+<nav class="subnav">
+  <a href="index.html" class="active">Input</a>
+  <a href="packing.html">Packing</a>
+  <a href="master.html">Master</a>
+  <a href="monitor.html">Monitor <span id="outboxBadge" class="nbadge hidden">0</span></a>
+</nav>
+
+<main class="container">
+  <div id="syncBar" class="syncbar hidden">
+    <div class="syncbar-track"><div id="syncFill" class="syncbar-fill"></div></div>
+    <small id="syncText" class="muted"></small>
+  </div>
+
+  <form id="qcForm" class="card" autocomplete="off">
+    <label>Tujuan
+      <input type="text" id="tujuan" list="tujuanList" placeholder="Ketik atau pilih tujuan" required>
+      <datalist id="tujuanList"></datalist>
+    </label>
+    <label>Tanggal Despatch <input type="date" id="tanggal" required></label>
+    <label>Part Number
+      <input type="text" id="partNumber" placeholder="Scan / ketik part number" required>
+      <small id="partNamePreview" class="hint">—</small>
+    </label>
+    <label>Qty <input type="number" id="qty" min="1" step="1" placeholder="0" required></label>
+    <label>Posisi Peletakan
+      <input type="text" id="posisi" list="posisiList" placeholder="Ketik atau pilih posisi">
+      <datalist id="posisiList"></datalist>
+    </label>
+    <button type="submit" id="submitBtn" class="btn-primary">Simpan QC</button>
+  </form>
+</main>
+
+<div id="toast" class="toast"></div>
+<script src="config.js"></script>
+<script src="api.js"></script>
+<script src="db.js"></script>
+<script src="input.js"></script>
+</body>
+</html>
